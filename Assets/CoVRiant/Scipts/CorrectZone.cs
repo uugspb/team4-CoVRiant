@@ -7,6 +7,9 @@ public class CorrectZone : MonoBehaviour {
     private bool waitForCorrect = false;
     private float startWatTime;
 
+    bool restart = false;
+    float restartTime;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,7 +17,13 @@ public class CorrectZone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if (restart)
+        {
+            if (Time.time > restartTime + 5)
+            {
+                Application.LoadLevel(Application.loadedLevelName);
+            }
+        }
 	}
 
     void OnTriggerEnter(Collider other)
@@ -66,6 +75,12 @@ public class CorrectZone : MonoBehaviour {
                             renderer.material = material;
                     });
 
+                    if (restart == false)
+                    {
+                        restart = true;
+                        restartTime = Time.time;
+                    }
+
                     //Application.LoadLevel("Start");
                 }
             }
@@ -75,6 +90,7 @@ public class CorrectZone : MonoBehaviour {
             }
         }
     }
+
 
     void OnTriggerExit(Collider other)
     {
