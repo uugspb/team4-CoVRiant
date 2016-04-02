@@ -30,6 +30,16 @@ public class CorrectZone : MonoBehaviour {
         }
     }
 
+    void VisitTransform(Transform t, System.Action<Transform> onT)
+    {
+        onT(t);
+        for (int i = 0; i < t.childCount; ++i)
+        {
+            onT(t.GetChild(i));
+        }
+    }
+
+
     void OnTriggerStay(Collider other)
     {
         Debug.Log(string.Format("OnTriggerStay {0}", other.name));
@@ -44,7 +54,19 @@ public class CorrectZone : MonoBehaviour {
                 }
                 else if (Time.time > startWatTime + CorrectWaitTime)
                 {
-                    Application.LoadLevel("Start");
+                    var prefabManager = GameObject.FindGameObjectWithTag("PrefabManager").GetComponent<PrefabManager>();
+
+                    var figure = prefabManager.Models[(int)PrefabManager.ModelType.Figure];
+
+                    var material = prefabManager.Materials[(int)PrefabManager.MaterialType.CorrectFigure];
+
+                    VisitTransform(figure.transform, t => {
+                        var renderer = t.GetComponent<MeshRenderer>();
+                        if (renderer != null)
+                            renderer.material = material;
+                    });
+
+                    //Application.LoadLevel("Start");
                 }
             }
             else
