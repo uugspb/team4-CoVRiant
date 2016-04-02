@@ -24,7 +24,7 @@ public class SphereMoving : MonoBehaviour {
 		inp_x = Input.GetAxis("Horizontal");
 		inp_z = Input.GetAxis("Vertical");
 //
-		transform.Rotate (Vector3.forward * inp_z * camSpeed + Vector3.right * inp_x * camSpeed );
+		transform.Rotate (-Vector3.forward * inp_z * camSpeed - Vector3.right * inp_x * camSpeed );
 
 	}
 	void FixedUpdate() {
