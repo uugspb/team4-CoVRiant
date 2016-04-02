@@ -302,7 +302,10 @@ public class VRCamera : MonoBehaviour {
 		Vector3 euler = rotation.eulerAngles;
         //rotation = Quaternion.Euler(Mathf.Max (-89f,Mathf.Min (89f,Mathf.DeltaAngle(0,euler.x)+mouseSensitivity*(oldMousePosition.y-Input.mousePosition.y))),euler.y-mouseSensitivity*(oldMousePosition.x-Input.mousePosition.x),0f);
         rotation = Quaternion.Euler(Mathf.Max(-89f, Mathf.Min(89f, Mathf.DeltaAngle(0, euler.x) - mouseSensitivity * Input.GetAxis("Mouse Y"))), euler.y + mouseSensitivity * Input.GetAxis("Mouse X"), 0f);
-        vrCameraLocal.localRotation = rotation;
+		
+		//rotation.x = Mathf.Clamp(rotation.x,0,180); 
+    
+		vrCameraLocal.localRotation = rotation;
 		oldMousePosition = Input.mousePosition;
 
 #elif UNITY_ANDROID && !UNITY_EDITOR
