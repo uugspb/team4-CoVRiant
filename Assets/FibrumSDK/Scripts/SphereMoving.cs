@@ -25,7 +25,7 @@ public class SphereMoving : MonoBehaviour {
 
 		transform.Rotate (-Vector3.up * inp_z * camSpeed - Vector3.right * inp_x * camSpeed );
 
-		if(Input.GetButton("Jump")) {
+		if(Input.GetButton("Jump") || Input.GetKey(KeyCode.Q)) {
 
 			newScale.x -= 0.1f;
 			newScale.y -= 0.1f;
@@ -33,7 +33,8 @@ public class SphereMoving : MonoBehaviour {
 
 			gameObject.transform.localScale = newScale;
 		}
-		if(Input.GetButton("Fire1")){
+		if(Input.GetButton("Fire1") || Input.GetKey(KeyCode.E))
+        {
 
 			newScale.x += 0.1f;
 			newScale.y += 0.1f;
