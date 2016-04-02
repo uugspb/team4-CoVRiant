@@ -5,39 +5,49 @@ public class SphereMoving : MonoBehaviour {
 	private float inp_x;
 	private float inp_z;
 	private float camSpeed = 1;
-
-	//public Transform cam;
-	//GameObject fire;
+	private Vector3 newScale;
 
 
-	// Use this for initialization
+	public float maxDistance = 10;
+	public float minDistance = 5;
+
+
 	void Start (){
-		//oldPos = transform.position;
-		//Physics.gravity = new Vector3(0, -75, 0);
+		newScale = gameObject.transform.localScale;
+
 	}
 
-	// Update is called once per frame
 	void Update () {
 
-		//fire = GameObject.Find("fire");
 
 		inp_x = Input.GetAxis("Horizontal");
 		inp_z = Input.GetAxis("Vertical");
-//
-		transform.Rotate (Vector3.forward * inp_z * camSpeed + Vector3.right * inp_x * camSpeed );
+
+		transform.Rotate (-Vector3.forward * inp_z * camSpeed - Vector3.right * inp_x * camSpeed );
+
+		if(Input.GetButton("Jump")) {
+
+			newScale.x -= 0.1f;
+			newScale.y -= 0.1f;
+			newScale.z -= 0.1f;
+
+			gameObject.transform.localScale = newScale;
+		}
+		if(Input.GetButton("Fire1")){
+
+			newScale.x += 0.1f;
+			newScale.y += 0.1f;
+			newScale.z += 0.1f;
+
+			gameObject.transform.localScale = newScale;
+		}
+
+		newScale.x = Mathf.Clamp(transform.localScale.x, minDistance, maxDistance);
+		newScale.y = Mathf.Clamp(transform.localScale.y, minDistance, maxDistance);
+		newScale.z = Mathf.Clamp(transform.localScale.z, minDistance, maxDistance);
 
 	}
 	void FixedUpdate() {
-
-//		Vector3 cp = transform.position - cam.position;
-//		cp.y = 0f;
-//		transform.Translate(Quaternion.LookRotation(cp) * inp * speed * Time.deltaTime, Space.World);
-//
-//		delta = oldPos - transform.position;
-//
-//		float ang = Mathf.Sin(delta.magnitude / diam / pi2) * Mathf.Rad2Deg;
-//		transform.RotateAround(Vector3.Cross(delta, Vector3.up), ang);
-//		oldPos = transform.position;
 
 	}
 }
