@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ChooseLevel : MonoBehaviour {
-    private Transform[] levels;
+    private GameObject[] levels;
     private Vector3[] distnces;
     public int countOfLevels;
     private GameObject lcamera;
@@ -13,11 +13,11 @@ public class ChooseLevel : MonoBehaviour {
     // Use this for initialization
     void Start () {
         lcamera = GameObject.FindWithTag("lcamera");
-        levels = new Transform[countOfLevels];
+        levels = new GameObject[countOfLevels];
         distnces = new Vector3[countOfLevels];
         for (int i = 0; i < countOfLevels; i++)
         {
-            levels[i] = GameObject.FindWithTag("level" + (i + 1)).transform;
+            levels[i] = GameObject.FindWithTag("level" + (i + 1));
         }
     }
 	
@@ -25,7 +25,7 @@ public class ChooseLevel : MonoBehaviour {
 	void Update () {
         for (int i = 0; i < countOfLevels; i++)
         {
-            distnces[i] = levels[i].position - lcamera.transform.position;
+            distnces[i] = levels[i].transform.position - lcamera.transform.position;
         }
         float minAngle = 20;
         int num = -1;
