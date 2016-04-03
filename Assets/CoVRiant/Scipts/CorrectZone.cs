@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CorrectZone : MonoBehaviour {
 
-    private float CorrectWaitTime = 2;
+    private float CorrectWaitTime = 5;
     private bool waitForCorrect = false;
     private float startWatTime;
 
