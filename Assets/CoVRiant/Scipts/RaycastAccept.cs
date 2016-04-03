@@ -48,7 +48,7 @@ public class RaycastAccept : MonoBehaviour {
 		if (setHighlighted) {
 			//gameObject.transform.localScale += new Vector3 (0.1F, 0.1F, 0.1F);
 //				iTween.ScaleBy (gameObject, iTween.Hash ("amount", gameObject.transform.localScale * 0.05F, "time", 1.0F, "easeType", "easeIn", "looptype", "none"));
-			iTween.MoveBy(gameObject, iTween.Hash("y", gameObject.transform.localScale.y, "time", 0.6F, "looptype", "none", "easetype", "easeInOutExpo"));
+			iTween.MoveBy(gameObject, iTween.Hash("y", gameObject.transform.localScale.y / 6, "time", 0.6F, "looptype", "none", "easetype", "easeInOutExpo"));
 			iTween.RotateBy (gameObject, iTween.Hash("x", 1.0F, "time", 0.3F, "easetype", "easeInOutExpo", "looptype", "none"));
 			iTween.ScaleTo (gameObject, iTween.Hash("scale", identityTransform.localScale * 1.3F, "time", 0.3F, "easetype", "easeInOutExpo", "looptype", "none"));
 			iTween.ScaleTo (gameObject, iTween.Hash("scale", identityTransform.localScale, "time", 0.3F, "delay", 0.3F, "easetype", "easeInOutExpo", "looptype", "none"));

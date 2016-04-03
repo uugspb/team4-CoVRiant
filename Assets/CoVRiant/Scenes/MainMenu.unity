@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.04411763, g: 0.04411763, b: 0.04411763, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b6a3f8bca2c865243929bac258c89b96, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -345,7 +345,7 @@ Transform:
   - {fileID: 1251095921}
   - {fileID: 459976734}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &459976730
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +858,7 @@ EllipsoidParticleEmitter:
   rndRotation: 0
   Simulate in Worldspace?: 1
   m_OneShot: 0
-  m_Ellipsoid: {x: 125.8, y: 9.63, z: 74.01}
+  m_Ellipsoid: {x: 131.41, y: 9.63, z: 216}
   m_MinEmitterRange: 0
 --- !u!4 &1957444366
 Transform:
