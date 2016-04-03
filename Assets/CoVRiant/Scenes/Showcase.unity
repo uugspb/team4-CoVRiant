@@ -130,6 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countOfLevels: 3
+  defaultMaterial1: {fileID: 2100000, guid: 66224f587bdd0844782c8d3e83d7e8a4, type: 2}
+  defaultMaterial2: {fileID: 2100000, guid: 0e7ebd3b868de3e41b0c2b1367da8577, type: 2}
+  defaultMaterial3: {fileID: 2100000, guid: 4c2b639db9b666b4d8d83f685453b20d, type: 2}
+  onHighlightMaterial: {fileID: 2100000, guid: e6e575d0baa97497ca504a527c14b2fd, type: 2}
 --- !u!1 &308408931
 GameObject:
   m_ObjectHideFlags: 0

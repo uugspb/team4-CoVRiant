@@ -9,6 +9,11 @@ public class ChooseLevel : MonoBehaviour {
     private int prevLevel = -1;
     private float startWatTime;
     private float CorrectWaitTime = 3;
+    public Material defaultMaterial1;
+    public Material defaultMaterial2;
+    public Material defaultMaterial3;
+
+    public Material onHighlightMaterial;
 
     // Use this for initialization
     void Start () {
@@ -41,6 +46,11 @@ public class ChooseLevel : MonoBehaviour {
         }
         if (prevLevel != num)
         {
+            if (num != -1) levels[num].GetComponent<Renderer>().material = onHighlightMaterial;
+            if (prevLevel == 0) levels[0].GetComponent<Renderer>().material = defaultMaterial1;
+            if (prevLevel == 1) levels[1].GetComponent<Renderer>().material = defaultMaterial2;
+            if (prevLevel == 2) levels[2].GetComponent<Renderer>().material = defaultMaterial3;
+
             startWatTime = Time.time;
             prevLevel = num;
         }
