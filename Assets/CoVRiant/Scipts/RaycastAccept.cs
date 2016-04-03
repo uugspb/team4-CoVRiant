@@ -14,7 +14,7 @@ public class RaycastAccept : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.Space) && isSetHighlighted) {
+		if (Input.GetKeyDown (KeyCode.H) && isSetHighlighted) {
 			var cam = GameObject.Find ("Sphere");
 //			var difference = cam.gameObject.transform.localScale * 7 - gameObject.transform.lossyScale;
 //			var realDifference = Mathf.Max (Mathf.Max(difference.x, difference.y), difference.z);
@@ -23,10 +23,10 @@ public class RaycastAccept : MonoBehaviour {
 //			var dz = cam.gameObject.transform.localScale.z / gameObject.transform.localScale.z;
 //			if (dx < 2 && dy < 2 && dz < 2) {
 //				iTween.ScaleAdd (cam, iTween.Hash ("amount", (gameObject.transform.localScale - cam.gameObject.transform.localScale) * 10, "time", 2.0F, "looptype", "none", "easetype", "easeInOutExpo"));
-////				iTween.ScaleTo (cam, iTween.Hash ("scale", 9 * gameObject.transform.localScale, "time", 2.0F, "looptype", "none", "easetype", "easeInOutExpo"));
 //			} 
 			//cam.gameObject.transform.localScale = gameObject.transform.localScale * 10;
 			// iTween.ScaleTo (cam, iTween.Hash ("x", 230,"y",230,"z",230, "time", 2.0F, "easetype", "easeInOutExpo"));
+			iTween.ScaleTo (cam, iTween.Hash ("scale", 9 * gameObject.transform.localScale, "time", 2.0F, "looptype", "none", "easetype", "easeInOutExpo"));
 			iTween.MoveTo (cam, iTween.Hash ("position", gameObject.transform.position, "time", 2.0F, "easetype", "easeInOutExpo"));
 		}
 	}
