@@ -23,8 +23,7 @@ public class CameraRaycasting : MonoBehaviour {
 				previousHit = hit.transform.gameObject;
 			}
 		}
-
-
+			
 	}
 
 }
