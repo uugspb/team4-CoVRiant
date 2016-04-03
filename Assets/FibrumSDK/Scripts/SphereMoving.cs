@@ -7,7 +7,6 @@ public class SphereMoving : MonoBehaviour {
 	private float camSpeed = 1;
 	private Vector3 newScale;
 
-
 	public float maxDistance = 10;
 	public float minDistance = 5;
 
