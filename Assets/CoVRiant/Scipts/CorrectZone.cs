@@ -21,7 +21,7 @@ public class CorrectZone : MonoBehaviour {
         {
             if (Time.time > restartTime + 5)
             {
-                Application.LoadLevel(Application.loadedLevelName);
+                Application.LoadLevel("Showcase");
             }
         }
 	}
